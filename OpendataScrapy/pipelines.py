@@ -5,6 +5,7 @@
 # Don't forget to add your pipeline to the ITEM_PIPELINES setting
 # See: https://doc.scrapy.org/en/latest/topics/item-pipeline.html
 import pymongo
+import json
 
 class OpendatascrapyPipeline(object):
     def __init__(self):
@@ -18,4 +19,5 @@ class OpendatascrapyPipeline(object):
         print("目前已經有了 " +str(self.count) + " 筆")
         self.coll.update_one({"title":item["title"],"county":item["county"]},{"$set":item},upsert=True)
         return item
+
 

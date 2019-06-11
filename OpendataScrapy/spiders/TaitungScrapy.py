@@ -4,6 +4,7 @@ from scrapy.linkextractors import LinkExtractor
 import requests
 from lxml import etree
 import pymongo
+import json
 
 
 class TaitungscrapySpider(scrapy.Spider):
@@ -21,6 +22,8 @@ class TaitungscrapySpider(scrapy.Spider):
         scrapy_db = client["opendata"]
         self.coll = scrapy_db["taipei"]
         self.count = 0
+        with open("./monthlyRecord.json", "r") as f:
+            self.load_j = json.load(f)
 
     def start_requests(self):
         yield scrapy.Request(url=self.url,callback=self.parse,dont_filter=True,meta={"changeNumber": True,"Number":"10000"})
@@ -43,6 +46,16 @@ class TaitungscrapySpider(scrapy.Spider):
         i["org"] = html.xpath('//*[@id="data_midlle"]/div/div[1]/table/tr[9]/td[1]/text()')[0].strip()
         i["field"] = html.xpath('//*[@id="data_midlle"]/div/div[1]/table/tr[5]/td/text()')[0].strip()
         i["format"] = ",".join(html.xpath('//*[@id="data_midlle"]/div/div[1]/table/tr[1]/td/label/input/@value'))
+        key = i["county"] + "-" + i["title"]
+        if (key in self.load_j):
+            self.load_j[key] = self.load_j[key] + 2
+        else:
+            self.load_j[key] = 1
         self.count = self.count + 1
         print("目前已經有了 " + str(self.count) + " 筆")
         self.coll.update_one({"title": item["title"], "county": item["county"]}, {"$set": item}, upsert=True)
+
+    def closed(self, reason):
+        with open("./monthlyRecord.json", "w+") as f:
+            f.write(json.dumps(self.load_j))
+

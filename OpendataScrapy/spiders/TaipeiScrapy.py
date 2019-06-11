@@ -11,6 +11,10 @@ class TaipeiscrapySpider(scrapy.Spider):
     host = "https://data.taipei/api/getDatasetInfo/getIDDetail?id={}"
     count = 0
 
+    def __init__(self):
+        with open("./monthlyRecord.json", "r") as f:
+            self.load_j = json.load(f)
+
     def start_requests(self):
         self.s = requests.Session()
         client = pymongo.MongoClient("localhost", 27017)
@@ -44,9 +48,19 @@ class TaipeiscrapySpider(scrapy.Spider):
         i["format"] = json['payload']['format']
         i["field"] = json["payload"]["fieldDescription"]
         i["county"] = "臺北市"
+        key = i["county"] + "-" + i["title"]
+        if (key in self.load_j):
+            self.load_j[key] = self.load_j[key] + 2
+        else:
+            self.load_j[key] = 1
         self.coll.update_one({"title": i["title"], "county": i["county"]}, {"$set": i}, upsert=True)
         self.count = self.count + 1
         print("目前已插入 " + str(self.count) + " 筆")
+
+    def closed(self, reason):
+        with open("./monthlyRecord.json", "w+") as f:
+            f.write(json.dumps(self.load_j))
+
 
 
 

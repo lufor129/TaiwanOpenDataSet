@@ -4,6 +4,7 @@ import requests
 from lxml import etree
 import math
 import re
+import json
 from ..items import OpendatascrapyItem
 
 
@@ -16,6 +17,8 @@ class YilanscrapySpider(scrapy.Spider):
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
         }
         self.host = "http://opendata.e-land.gov.tw"
+        with open("./monthlyRecord.json", "r") as f:
+            self.load_j = json.load(f)
         response = requests.get("http://opendata.e-land.gov.tw/dataset",headers=self.headers)
         html = etree.HTML(response.content.decode())
         mainTitle = html.xpath('//*[@id="dataset-search-form"]/h2/text()')[1]
@@ -52,4 +55,13 @@ class YilanscrapySpider(scrapy.Spider):
         i = response.meta["item"]
         i["county"] = "宜蘭縣"
         i["field"] = response.xpath('//*[@class="prose notes"]/p/text()').extract_first().strip()
+        key = i["county"] + "-" + i["title"]
+        if (key in self.load_j):
+            self.load_j[key] = self.load_j[key] + 2
+        else:
+            self.load_j[key] = 1
         return i
+
+    def closed(self, reason):
+        with open("./monthlyRecord.json", "w+") as f:
+            f.write(json.dumps(self.load_j))

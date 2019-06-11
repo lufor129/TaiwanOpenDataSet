@@ -1,6 +1,8 @@
 # 台灣目前所有開放資料集整理
-運行 : 
- ```python OpendataScrapy/run.py```  資料存在mongodb中 opendata.taipei 
+運行 :  
+ 1. ```python OpendataScrapy/run.py```  資料存在mongodb中 opendata.taipei 
+2. 運行時間 : 7小時左右
+3. 資料量 :  19280筆資料
 
 ### 欄位說明 : 
 1. title  資料集名稱
@@ -10,3 +12,4 @@
 5. format 資料集格式
 6. county 資料集縣市
 7. field  資料及欄位
+
