@@ -3,23 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d1db567e-a9f0-46e4-85c2-5287595096cb" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/pipelines.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/pipelines.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/GovOpendata.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/GovOpendata.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCityScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCityScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCountyScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCountyScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/KaohsiungScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/KaohsiungScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/KinmenScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/KinmenScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/NantouScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/NantouScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/NewTaipeiScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/NewTaipeiScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/PingtungScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/PingtungScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/TaichungScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/TaichungScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/TainanScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/TainanScrapy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/TaipeiScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/TaipeiScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/TaitungScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/TaitungScrapy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/TaoyuanScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/TaoyuanScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/OpendataScrapy/spiders/YilanScrapy.py" beforeDir="false" afterPath="$PROJECT_DIR$/OpendataScrapy/spiders/YilanScrapy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Test.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Test.ipynb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/getmongo.py" beforeDir="false" afterPath="$PROJECT_DIR$/getmongo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monthlyRecord.json" beforeDir="false" afterPath="$PROJECT_DIR$/monthlyRecord.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -30,71 +19,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="middlewares.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpendataScrapy/middlewares.py">
+      <file leaf-file-name="test.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="275">
-              <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
+            <state relative-caret-position="100">
+              <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NantouScrapy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/NantouScrapy.py">
+      <file leaf-file-name="getmongo.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/getmongo.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="46" selection-start-line="46" selection-end-line="48" selection-end-column="44" />
+            <state relative-caret-position="250">
+              <caret line="11" selection-start-line="11" selection-end-line="11" />
               <folding>
-                <element signature="e#24#37#0" expanded="true" />
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NewTaipeiScrapy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/NewTaipeiScrapy.py">
+      <file leaf-file-name="GovOpendata.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/GovOpendata.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="54" selection-start-line="54" selection-end-line="56" selection-end-column="44" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PingtungScrapy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/PingtungScrapy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="44" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaichungScrapy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaichungScrapy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="65" selection-start-line="65" selection-end-line="67" selection-end-column="44" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TainanScrapy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TainanScrapy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="61" selection-start-line="61" selection-end-line="64" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="300">
+              <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -102,8 +52,8 @@
       <file leaf-file-name="TaipeiScrapy.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaipeiScrapy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="62">
-              <caret line="59" selection-start-line="59" selection-end-line="62" />
+            <state relative-caret-position="1500">
+              <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -111,35 +61,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TaitungScrapy.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaitungScrapy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="57" selection-start-line="57" selection-end-line="59" selection-end-column="44" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="TaoyuanScrapy.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="TaoyuanScrapy.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaoyuanScrapy.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="60" selection-start-line="60" selection-end-line="62" selection-end-column="44" />
-              <folding>
-                <element signature="e#24#37#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="YilanScrapy.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/YilanScrapy.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+            <state relative-caret-position="1600">
+              <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
               <folding>
                 <element signature="e#24#37#0" expanded="true" />
               </folding>
@@ -161,6 +87,7 @@
       <find>_set_url</find>
       <find>2</find>
       <find>新北市安養堂</find>
+      <find>宜蘭</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -174,10 +101,6 @@
         <option value="$PROJECT_DIR$/OpendataScrapy/settings.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/PintungScrapy.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/run.py" />
-        <option value="$PROJECT_DIR$/OpendataScrapy/pipelines.py" />
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/getmongo.py" />
-        <option value="$PROJECT_DIR$/OpendataScrapy/spiders/GovOpendata.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCityScrapy.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCountyScrapy.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/KaohsiungScrapy.py" />
@@ -187,16 +110,20 @@
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/PingtungScrapy.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/TaichungScrapy.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/TainanScrapy.py" />
-        <option value="$PROJECT_DIR$/OpendataScrapy/spiders/TaipeiScrapy.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/TaitungScrapy.py" />
-        <option value="$PROJECT_DIR$/OpendataScrapy/spiders/TaoyuanScrapy.py" />
         <option value="$PROJECT_DIR$/OpendataScrapy/spiders/YilanScrapy.py" />
+        <option value="$PROJECT_DIR$/OpendataScrapy/pipelines.py" />
+        <option value="$PROJECT_DIR$/OpendataScrapy/spiders/TaipeiScrapy.py" />
+        <option value="$PROJECT_DIR$/test.py" />
+        <option value="$PROJECT_DIR$/OpendataScrapy/spiders/TaoyuanScrapy.py" />
+        <option value="$PROJECT_DIR$/getmongo.py" />
+        <option value="$PROJECT_DIR$/OpendataScrapy/spiders/GovOpendata.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="345" />
-    <option name="y" value="-20" />
+    <option name="x" value="90" />
+    <option name="y" value="-25" />
     <option name="width" value="1780" />
     <option name="height" value="950" />
   </component>
@@ -208,7 +135,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -231,10 +157,11 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="D:/Test" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -318,18 +245,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.19772118" />
       <window_info anchor="bottom" id="TODO" order="10" />
       <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="5" weight="0.32956153" />
       <window_info anchor="bottom" id="Version Control" order="3" />
       <window_info anchor="bottom" id="Python Console" order="0" />
       <window_info anchor="bottom" id="Run" order="6" weight="0.3536068" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Mongo Explorer" order="0" visible="true" weight="0.1313673" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.25176802" />
+      <window_info anchor="right" id="Mongo Explorer" order="0" visible="true" weight="0.10589813" />
+      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.37906647" />
       <window_info id="Favorites" order="0" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
@@ -338,27 +263,8 @@
       <window_info anchor="bottom" id="Message" order="4" />
       <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
+      <window_info active="true" anchor="bottom" id="Find" order="5" visible="true" weight="0.32956153" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="3" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="9" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="8" weight="0.25" />
-      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.20885201" />
-      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="1" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="TODO" order="10" />
-      <window_info anchor="bottom" id="Run" order="6" />
-      <window_info anchor="bottom" id="Find" order="5" />
-      <window_info anchor="bottom" id="Debug" order="7" weight="0.4" />
-      <window_info anchor="right" id="Mongo Explorer" order="0" visible="true" weight="0.13969572" />
-      <window_info anchor="bottom" id="Event Log" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="3" show_stripe_button="false" />
-      <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="1" visible="true" weight="0.32142857" />
-      <window_info anchor="bottom" id="Python Console" order="0" />
-    </layout-to-restore>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
@@ -369,20 +275,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/items.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="10" column="24" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TainanScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1225">
-          <caret line="55" lean-forward="true" selection-start-line="55" selection-end-line="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaoyuanScrapy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="950">
@@ -563,23 +455,6 @@
     <entry file="file://$PROJECT_DIR$/county.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/monthlyRecord.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="3" column="25" lean-forward="true" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OpendataScrapy/items.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
@@ -587,90 +462,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/getmongo.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="12" column="26" lean-forward="true" selection-start-line="12" selection-start-column="26" selection-end-line="12" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCountyScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="44" selection-start-line="44" selection-end-line="47" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCityScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-124">
-          <caret line="29" column="32" lean-forward="true" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/pipelines.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="258">
-          <caret line="18" column="48" lean-forward="true" selection-start-line="18" selection-start-column="48" selection-end-line="18" selection-end-column="48" />
-          <folding>
-            <element signature="e#193#207#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/GovOpendata.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1101">
-          <caret line="53" column="44" selection-start-line="53" selection-start-column="44" selection-end-line="53" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/KinmenScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/KaohsiungScrapy.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="151">
           <caret line="19" selection-start-line="19" selection-end-line="20" selection-end-column="38" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/middlewares.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="31" lean-forward="true" selection-start-line="31" selection-end-line="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/NewTaipeiScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="54" selection-start-line="54" selection-end-line="56" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -678,19 +473,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
           <caret line="46" selection-start-line="46" selection-end-line="48" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/PingtungScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -698,56 +480,141 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="237">
           <caret line="65" selection-start-line="65" selection-end-line="67" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TainanScrapy.py">
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCountyScrapy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="61" selection-start-line="61" selection-end-line="64" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="1125">
+          <caret line="45" column="51" lean-forward="true" selection-start-line="45" selection-start-column="51" selection-end-line="45" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaipeiScrapy.py">
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="62">
-          <caret line="59" selection-start-line="59" selection-end-line="62" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaitungScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="57" selection-start-line="57" selection-end-line="59" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaoyuanScrapy.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="60" selection-start-line="60" selection-end-line="62" selection-end-column="44" />
-          <folding>
-            <element signature="e#24#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="200">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/YilanScrapy.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="66" column="44" selection-start-line="66" selection-start-column="44" selection-end-line="66" selection-end-column="44" />
+        <state relative-caret-position="604">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/pipelines.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="500">
+          <caret line="21" selection-start-line="21" selection-end-line="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/middlewares.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="31" selection-start-line="31" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/HsinchuCityScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="604">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/NewTaipeiScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="54" selection-start-line="54" selection-end-line="56" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaitungScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="582">
+          <caret line="57" column="29" lean-forward="true" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TainanScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="61" selection-start-line="61" selection-end-line="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/PingtungScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="507">
+          <caret line="49" selection-start-line="49" selection-end-line="51" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/KinmenScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="336">
+          <caret line="47" column="44" selection-start-line="47" selection-start-column="44" selection-end-line="47" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/monthlyRecord.json">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Test.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/getmongo.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="11" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/GovOpendata.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="16" column="44" selection-start-line="16" selection-start-column="44" selection-end-line="16" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaipeiScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1500">
+          <caret line="64" column="32" selection-start-line="64" selection-start-column="32" selection-end-line="64" selection-end-column="32" />
+          <folding>
+            <element signature="e#24#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/scrapy/spiders/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="236">
+          <caret line="107" lean-forward="true" selection-start-line="107" selection-end-line="107" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/OpendataScrapy/spiders/TaoyuanScrapy.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1600">
+          <caret line="64" lean-forward="true" selection-start-line="64" selection-end-line="64" />
           <folding>
             <element signature="e#24#37#0" expanded="true" />
           </folding>

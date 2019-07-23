@@ -10,5 +10,5 @@ for x in coll.find():
     key = x["county"]+"-"+x["title"]
     dict[key] = 0
 
-with open("monthlyRecord.json","w") as f:
+with open("monthlyRecord.json",'w') as f:
     json.dump(dict,f)

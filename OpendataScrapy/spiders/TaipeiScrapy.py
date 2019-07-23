@@ -8,7 +8,7 @@ import math
 class TaipeiscrapySpider(scrapy.Spider):
     name = 'TaipeiScrapy'
     allowed_domains = ['data.taipei']
-    host = "https://data.taipei/api/getDatasetInfo/getIDDetail?id={}"
+    host = "https://data.taipei/api/dataportal/get-dataset-detail?id={}"
     count = 0
 
     def __init__(self):
@@ -20,15 +20,20 @@ class TaipeiscrapySpider(scrapy.Spider):
         client = pymongo.MongoClient("localhost", 27017)
         scrapy_db = client["opendata"]
         self.coll = scrapy_db["taipei"]
-        yield scrapy.FormRequest("https://data.taipei/api/dataset/searchDataset",formdata={"searchString": "", "pageNum": "10", "perPage": "10",
-                                "sort": "update_descend"},callback=self.parse)
+        formdata = {"frontNumber":"", "pageNum": 1,"perPage": 10,"sort": "","postFilter":{}}
+        yield scrapy.Request("https://data.taipei/api/dataportal/search-dataset", body=json.dumps(formdata),method='POST',headers={'Content-Type':'application/json'},callback=self.parse)
+        # yield scrapy.FormRequest("https://data.taipei/api/dataportal/search-dataset",formdata=,callback=self.parse)
 
     def parse(self, response):
         data = json.loads(response.body_as_unicode())
         totalCount = math.ceil(int(data["payload"]["searchedCount"]) / 10)
+        formdata = {"frontNumber": "", "pageNum": 1, "perPage": 10, "sort": "", "postFilter": {}}
         for p in range(1,totalCount+1):
-            yield scrapy.FormRequest("https://data.taipei/api/dataset/searchDataset",formdata={"searchString": "", "pageNum": str(p), "perPage": "10",
-                                "sort": "update_descend"},meta={"page":str(p)},callback=self.get_page)
+            formdata["pageNum"] = p
+            yield scrapy.Request("https://data.taipei/api/dataportal/search-dataset", body=json.dumps(formdata),
+                                 method='POST', headers={'Content-Type': 'application/json'},meta={"page":str(p)},callback=self.get_page)
+            # yield scrapy.FormRequest("https://data.taipei/api/dataportal/search-dataset",formdata={"frontNumber": "", "pageNum": p, "perPage": 10,
+            #                     "sort": ""},meta={"page":str(p)},callback=self.get_page)
 
     def get_page(self,response):
         print("page "+response.meta["page"])
@@ -41,12 +46,17 @@ class TaipeiscrapySpider(scrapy.Spider):
 
     def get_data(self,json):
         i = {}
-        i["title"] = json["payload"]['title']
-        i["info"] = json["payload"]['description']
-        i["link"] = "https://data.taipei/dataset/detail/metadata?id=" + json["payload"]['id']
-        i["org"] = json['payload']["orgName"]
-        i["format"] = json['payload']['format']
-        i["field"] = json["payload"]["fieldDescription"]
+        i["title"] = json["title"]
+        i["info"] = json["description"]
+        i["link"] = self.host.format(json["id"])
+        try:
+            i["org"] = json["orgName"]
+            i["format"] = json['format']
+        except:
+            i["org"] = json["organizationName"]
+            i["format"] = ""
+
+        i["field"] = json["fieldDescription"]
         i["county"] = "臺北市"
         key = i["county"] + "-" + i["title"]
         if (key in self.load_j):
@@ -60,6 +70,8 @@ class TaipeiscrapySpider(scrapy.Spider):
     def closed(self, reason):
         with open("./monthlyRecord.json", "w+") as f:
             f.write(json.dumps(self.load_j))
+
+
 
 
 

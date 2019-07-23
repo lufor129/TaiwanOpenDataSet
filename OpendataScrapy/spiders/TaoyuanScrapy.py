@@ -55,7 +55,6 @@ class TaoyuanscrapySpider(scrapy.Spider):
             self.load_j[key] = self.load_j[key] + 2
         else:
             self.load_j[key] = 1
-        self.count = self.count + 1
         return i
 
     def closed(self, reason):
