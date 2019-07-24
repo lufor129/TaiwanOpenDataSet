@@ -6,20 +6,18 @@ import json
 class KinmenscrapySpider(scrapy.Spider):
     name = 'KinmenScrapy'
     allowed_domains = ['data.kinmen.gov.tw']
-    url = "https://data.kinmen.gov.tw/Cus_OpenData_Default.aspx"
+    url = "https://data.kinmen.gov.tw/Cus_OpenData_Default.aspx?o=4&Page={}"
     host = "https://data.kinmen.gov.tw/{}"
-    custom_settings = {
-        "DOWNLOADER_MIDDLEWARES":{
-           "OpendataScrapy.middlewares.SeleniumDownloadMiddleware":600
-        }
-    }
-
-    def __init__(self):
-        with open("./monthlyRecord.json", "r") as f:
-            self.load_j = json.load(f)
 
     def start_requests(self):
-        yield scrapy.Request(url=self.url,callback=self.parse,dont_filter=True,meta={"changeNumber": True,"Number":"10000"})
+        with open("./monthlyRecord.json", "r") as f:
+            self.load_j = json.load(f)
+        yield scrapy.Request(url=self.url.format(str(1)),callback=self.getPages)
+
+    def getPages(self,response):
+        totalPage = response.xpath('//span[@id="ContentPlaceHolder1_lblTotalPage"]/text()').extract_first()
+        for i in range(1,int(totalPage)+1):
+            yield scrapy.Request(url=self.url.format(str(i)),callback=self.parse)
 
     def parse(self, response):
         ul = response.xpath('//div[@class="data_list"]/ul/li')
@@ -27,7 +25,7 @@ class KinmenscrapySpider(scrapy.Spider):
             i = OpendatascrapyItem()
             i["title"] = li.xpath('.//h4/a/@title').extract_first()
             i["link"] = self.host.format(li.xpath('.//h4/a/@href').extract_first())
-            i["format"] = ",".join(li.xpath('.//ol/li/a/text()').extract())
+            i["format"] =",".join(list(set(li.xpath(".//ol/li/@class").extract())))
             yield scrapy.Request(url=i["link"],callback=self.get_data,meta={"item":i})
 
     def get_data(self,response):

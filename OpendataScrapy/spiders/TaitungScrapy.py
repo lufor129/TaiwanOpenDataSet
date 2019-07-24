@@ -17,15 +17,14 @@ class TaitungscrapySpider(scrapy.Spider):
         }
     }
 
-    def __init__(self):
-        client = pymongo.MongoClient("localhost",27017)
+
+    def start_requests(self):
+        client = pymongo.MongoClient("localhost", 27017)
         scrapy_db = client["opendata"]
         self.coll = scrapy_db["taipei"]
         self.count = 0
         with open("./monthlyRecord.json", "r") as f:
             self.load_j = json.load(f)
-
-    def start_requests(self):
         yield scrapy.Request(url=self.url,callback=self.parse,dont_filter=True,meta={"changeNumber": True,"Number":"10000"})
 
     def parse(self, response):
@@ -52,6 +51,7 @@ class TaitungscrapySpider(scrapy.Spider):
         else:
             self.load_j[key] = 1
         self.count = self.count + 1
+        print(i)
         print("目前已經有了 " + str(self.count) + " 筆")
         self.coll.update_one({"title": item["title"], "county": item["county"]}, {"$set": item}, upsert=True)
 

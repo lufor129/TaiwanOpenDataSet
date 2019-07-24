@@ -14,11 +14,10 @@ class PintungscrapySpider(scrapy.Spider):
            "OpendataScrapy.middlewares.SeleniumDownloadMiddleware":600
         }
     }
-    def __int__(self):
-        with open("./monthlyRecord.json", "r") as f:
-            self.load_j = json.load(f)
 
     def start_requests(self):
+        with open("./monthlyRecord.json", "r") as f:
+            self.load_j = json.load(f)
         yield scrapy.Request(url=self.url,callback=self.parse,dont_filter=True,meta={"changeNumber": True,"Number":"10000"})
 
     def parse(self, response):
