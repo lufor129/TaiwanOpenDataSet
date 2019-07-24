@@ -1,8 +1,9 @@
-from scrapy.cmdline import execute
+import os
+
 array = ["GovOpendata","HsinchuCityScrapy","HsinchuCountyScrapy","KaohsiungScrapy","KinmenScrapy"
     ,"NantouScrapy","NewTaipeiScrapy","PingtungScrapy","TaichungScrapy","TainanScrapy","TaipeiScrapy","TaitungScrapy"
     ,"TaoyuanScrapy","YilanScrapy"]
 cmd = "scrapy crawl {}"
 for county in array:
-    execute(cmd.format(county).split())
+    os.system(cmd.format(county))
     print(county+"  完成")

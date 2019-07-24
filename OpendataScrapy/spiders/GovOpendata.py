@@ -41,13 +41,13 @@ class GovopendataSpider(scrapy.Spider):
     def parse(self, response):
         i = OpendatascrapyItem()
         i["title"] = response.xpath('//*[contains(@class,"node node-dataset")]/div[1]/div/h1/text()').extract_first()
-        i["info"] = response.xpath('//div[@class="node-content"]/div[2]/div[@class="field-items"]/div/text()').extract_first().strip()
-        field = response.xpath('//div[@class="node-content"]/div[3]/div[@class="field-items"]/div/text()')
+        i["info"] = response.xpath('//div[@class="node-content"]/div[3]/div[@class="field-items"]/div/text()').extract_first().strip()
+        field = response.xpath('//div[@class="node-content"]/div[4]/div[@class="field-items"]/div/text()')
         if len(field)==0:
             i["field"] = ""
         else:
             i["field"] = field.extract_first().strip()
-        i["org"] = response.xpath('//div[@class="node-content"]/div[5]/div[@class="field-items"]/div/a/text()').extract_first()
+        i["org"] = response.xpath('//div[@class="node-content"]/div[6]/div[@class="field-items"]/div/a/text()').extract_first()
         i["format"] = response.meta["format"]
         i["link"] = response.url
         i["county"] = response.meta["county"]
