@@ -3,6 +3,7 @@ import scrapy
 from ..items import OpendatascrapyItem
 from scrapy.linkextractors import LinkExtractor
 import json
+import time
 
 class PintungscrapySpider(scrapy.Spider):
     name = 'PingtungScrapy'
@@ -16,8 +17,8 @@ class PintungscrapySpider(scrapy.Spider):
     }
 
     def start_requests(self):
-        with open("./monthlyRecord.json", "r") as f:
-            self.load_j = json.load(f)
+        # with open("./monthlyRecord.json", "r") as f:
+        #     self.load_j = json.load(f)
         yield scrapy.Request(url=self.url,callback=self.parse,dont_filter=True,meta={"changeNumber": True,"Number":"10000"})
 
     def parse(self, response):
@@ -39,13 +40,14 @@ class PintungscrapySpider(scrapy.Spider):
         i["info"] = response.xpath('//table//tr[2]/td/text()').extract_first().replace("\r","").replace("\n","").replace(" ","")
         i["org"] = "屏東縣"+response.xpath('//table//tr[6]/td/text()').extract_first().replace("\r","").replace("\n","").replace(" ","")
         i["county"] = "屏東縣"
-        key = i["county"] + "-" + i["title"]
-        if (key in self.load_j):
-            self.load_j[key] = self.load_j[key] + 2
-        else:
-            self.load_j[key] = 1
+        # key = i["county"] + "-" + i["title"]
+        # if (key in self.load_j):
+        #     self.load_j[key] = self.load_j[key] + 2
+        # else:
+        #     self.load_j[key] = 1
         return i
 
     def closed(self, reason):
-        with open("./monthlyRecord.json", "w+") as f:
-            f.write(json.dumps(self.load_j))
+        with open("./crawlLog.txt","a") as file:
+            timeformat = "{}-{}_{}-{}-Pingtung finish\n"
+            file.write(timeformat.format(time.localtime()[0],time.localtime()[1],time.localtime()[3],time.localtime()[4]))

@@ -8,6 +8,7 @@ from time import sleep
 import urllib3
 from ..items import OpendatascrapyItem
 import json
+import time
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 
@@ -19,8 +20,8 @@ class TaichungscrapySpider(scrapy.Spider):
         self.headers = {
             "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
         }
-        with open("./monthlyRecord.json", "r") as f:
-            self.load_j = json.load(f)
+        # with open("./monthlyRecord.json", "r") as f:
+        #     self.load_j = json.load(f)
         self.host = "https://opendata.taichung.gov.tw"
         response = requests.get("https://opendata.taichung.gov.tw/dataset", headers=self.headers, verify=False)
         html = etree.HTML(response.content.decode())
@@ -56,13 +57,14 @@ class TaichungscrapySpider(scrapy.Spider):
         i["org"] = response.xpath('//*[@id="content"]/div[3]/div/article/div/section[3]/table/tbody/tr[13]/td/text()').extract_first()
         i["field"] = response.xpath('//*[@id="content"]/div[3]/div/article/div/section[3]/table/tbody/tr[5]/td/text()').extract_first()
         i["county"] = "臺中市"
-        key = i["county"] + "-" + i["title"]
-        if (key in self.load_j):
-            self.load_j[key] = self.load_j[key] + 2
-        else:
-            self.load_j[key] = 1
+        # key = i["county"] + "-" + i["title"]
+        # if (key in self.load_j):
+        #     self.load_j[key] = self.load_j[key] + 2
+        # else:
+        #     self.load_j[key] = 1
         return i
 
     def closed(self, reason):
-        with open("./monthlyRecord.json", "w+") as f:
-            f.write(json.dumps(self.load_j))
+        with open("./crawlLog.txt","a") as file:
+            timeformat = "{}-{}_{}-{}-Taichung finish\n"
+            file.write(timeformat.format(time.localtime()[0],time.localtime()[1],time.localtime()[3],time.localtime()[4]))

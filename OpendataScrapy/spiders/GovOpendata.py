@@ -3,6 +3,7 @@ import scrapy
 import json
 import math
 import re
+import time
 from ..items import OpendatascrapyItem
 
 class GovopendataSpider(scrapy.Spider):
@@ -10,12 +11,10 @@ class GovopendataSpider(scrapy.Spider):
     allowed_domains = ['NUK.edu.tw']
 
     def __init__(self):
-        self.headers = headers ={
+        self.headers = {
             "User-Agent":"Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
         }
         self.host = "https://data.gov.tw"
-        with open("./monthlyRecord.json", "r") as f:
-            self.load_j = json.load(f)
         with open('county.json') as f:
             self.countys = json.load(f)
 
@@ -51,17 +50,12 @@ class GovopendataSpider(scrapy.Spider):
         i["format"] = response.meta["format"]
         i["link"] = response.url
         i["county"] = response.meta["county"]
-        key = i["county"] + "-" + i["title"]
-        if (key in self.load_j):
-            self.load_j[key] = self.load_j[key]+2
-        else:
-            self.load_j[key] = 1
         yield i
 
     def closed(self,reason):
-        with open("./monthlyRecord.json", "w+") as f:
-            f.write(json.dumps(self.load_j))
-
+        with open("./crawlLog.txt","a") as file:
+            timeformat = "{}-{}_{}-{}-GovOpenData finish\n"
+            file.write(timeformat.format(time.localtime()[0],time.localtime()[1],time.localtime()[3],time.localtime()[4]))
 
 
 

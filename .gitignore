@@ -1,2 +1,8 @@
 monthlyRecord.json
-
+.idea/
+.ipynb_checkpoints/
+*.txt
+*.ipynb
+*.model
+OpendataScrapy/__pycache__/
+OpendataScrapy/spiders/__pycache__/

@@ -3,6 +3,7 @@ import scrapy
 from ..items import OpendatascrapyItem
 from scrapy.linkextractors import LinkExtractor
 import json
+import time
 
 class NantouscrapySpider(scrapy.Spider):
     name = 'NantouScrapy'
@@ -10,9 +11,9 @@ class NantouscrapySpider(scrapy.Spider):
     start_urls = ['https://data.nantou.gov.tw/dataset']
     host = "https://data.nantou.gov.tw"
 
-    def __init__(self):
-        with open("./monthlyRecord.json", "r") as f:
-            self.load_j = json.load(f)
+    # def __init__(self):
+    #     with open("./monthlyRecord.json", "r") as f:
+    #         self.load_j = json.load(f)
 
     def parse(self, response):
         link = LinkExtractor(allow=r"https://data\.nantou\.gov\.tw/dataset\?page=\d+")
@@ -37,13 +38,14 @@ class NantouscrapySpider(scrapy.Spider):
         i["org"] = "南投縣"+response.xpath('//*[@id="content"]/div[2]/ol/li[3]/a/text()').extract_first().strip()
         i["field"] = response.xpath('//li[@class="resource-item"]/p/text()').extract_first().strip()
         i["county"] = "南投縣"
-        key = i["county"] + "-" + i["title"]
-        if (key in self.load_j):
-            self.load_j[key] = self.load_j[key] + 2
-        else:
-            self.load_j[key] = 1
+        # key = i["county"] + "-" + i["title"]
+        # if (key in self.load_j):
+        #     self.load_j[key] = self.load_j[key] + 2
+        # else:
+        #     self.load_j[key] = 1
         return i
 
     def closed(self, reason):
-        with open("./monthlyRecord.json", "w+") as f:
-            f.write(json.dumps(self.load_j))
+        with open("./crawlLog.txt","a") as file:
+            timeformat = "{}-{}_{}-{}-Nantou finish\n"
+            file.write(timeformat.format(time.localtime()[0],time.localtime()[1],time.localtime()[3],time.localtime()[4]))

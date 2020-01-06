@@ -3,6 +3,7 @@ import scrapy
 from scrapy.linkextractors import LinkExtractor
 from ..items import OpendatascrapyItem
 import json
+import time
 
 class HsinchucountyscrapySpider(scrapy.Spider):
     name = 'HsinchuCountyScrapy'
@@ -11,9 +12,9 @@ class HsinchucountyscrapySpider(scrapy.Spider):
     headers = headers = {
         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/51.0.2704.103 Safari/537.36",
     }
-    def __init__(self):
-        with open("./monthlyRecord.json", "r") as f:
-            self.load_j = json.load(f)
+    # def __init__(self):
+    #     with open("./monthlyRecord.json", "r") as f:
+    #         self.load_j = json.load(f)
 
     def parse(self, response):
         next_page = response.xpath('//div[@class="nextPage"]/a/@href').extract_first()
@@ -36,12 +37,9 @@ class HsinchucountyscrapySpider(scrapy.Spider):
         i["field"] = response.xpath('//*[@id="content"]/div[1]/div[4]/table/tr[6]/td/text()').extract_first().strip()
         i["format"] = ",".join(response.xpath('//button[contains(@class,"btn btn-large")]/text()').extract())
         key = i["county"] + "-" + i["title"]
-        if (key in self.load_j):
-            self.load_j[key] = self.load_j[key]+2
-        else:
-            self.load_j[key] = 1
         return i
 
     def closed(self, reason):
-        with open("./monthlyRecord.json", "w+") as f:
-            f.write(json.dumps(self.load_j))
+        with open("./crawlLog.txt","a") as file:
+            timeformat = "{}-{}_{}-{}-HsinchuCounty finish\n"
+            file.write(timeformat.format(time.localtime()[0],time.localtime()[1],time.localtime()[3],time.localtime()[4]))

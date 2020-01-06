@@ -4,6 +4,7 @@ from scrapy.linkextractors import LinkExtractor
 from ..items import OpendatascrapyItem
 import re
 import json
+import time
 
 class HsinchucityscrapySpider(scrapy.Spider):
     name = 'HsinchuCityScrapy'
@@ -11,8 +12,7 @@ class HsinchucityscrapySpider(scrapy.Spider):
 
     def __init__(self):
         self.host = "http://opendata.hccg.gov.tw"
-        with open("./monthlyRecord.json", "r") as f:
-            self.load_j = json.load(f)
+
 
     def start_requests(self):
         yield scrapy.Request("http://opendata.hccg.gov.tw/dataset?page=1",callback=self.get_links,dont_filter=True)
@@ -36,13 +36,9 @@ class HsinchucityscrapySpider(scrapy.Spider):
         i["county"] = "新竹市"
         i["field"] = response.xpath('//*[@id="dataset-resources"]/ul/li[1]/p/text()').extract_first().strip()
         i["format"] = ",".join(response.xpath('//*[@id="dataset-resources"]/ul/li/h3/text()').extract())
-        key = i["county"] + "-" + i["title"]
-        if (key in self.load_j):
-            self.load_j[key] = self.load_j[key]+2
-        else:
-            self.load_j[key] = 1
         return i
 
     def closed(self, reason):
-        with open("./monthlyRecord.json", "w+") as f:
-            f.write(json.dumps(self.load_j))
+        with open("./crawlLog.txt","a") as file:
+            timeformat = "{}-{}_{}-{}-HsinchuCity finish\n"
+            file.write(timeformat.format(time.localtime()[0],time.localtime()[1],time.localtime()[3],time.localtime()[4]))
