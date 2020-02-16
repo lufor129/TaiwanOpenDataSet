@@ -36,7 +36,7 @@ class HsinchucountyscrapySpider(scrapy.Spider):
         i["county"] = "新竹縣"
         i["field"] = response.xpath('//*[@id="content"]/div[1]/div[4]/table/tr[6]/td/text()').extract_first().strip()
         i["format"] = ",".join(response.xpath('//button[contains(@class,"btn btn-large")]/text()').extract())
-        key = i["county"] + "-" + i["title"]
+        # key = i["county"] + "-" + i["title"]
         return i
 
     def closed(self, reason):

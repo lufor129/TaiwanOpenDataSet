@@ -18,3 +18,4 @@ class OpendatascrapyItem(scrapy.Item):
     format = scrapy.Field()
     field = scrapy.Field()
     county = scrapy.Field()
+    updateTime = scrapy.Field()

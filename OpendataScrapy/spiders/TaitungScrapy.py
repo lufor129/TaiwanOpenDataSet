@@ -25,6 +25,8 @@ class TaitungscrapySpider(scrapy.Spider):
         self.coll = scrapy_db["taipei"]
         self.count = 0
         timeFormat = "NewData_{}_{}"
+        update_month = "Update_{}_{}"
+        self.month = update_month.format(time.localtime()[0],time.localtime()[1])
         self.newColl = scrapy_db[timeFormat.format(time.localtime()[0],time.localtime()[1])]
         # with open("./monthlyRecord.json", "r") as f:
         #     self.load_j = json.load(f)
@@ -53,6 +55,7 @@ class TaitungscrapySpider(scrapy.Spider):
         #     self.load_j[key] = self.load_j[key] + 2
         # else:
         #     self.load_j[key] = 1
+        i["updateTime"] = self.month
         if(self.coll.find_one({"title":i["title"],"county":i["county"]})==None):
             print("新增一筆")
             self.newColl.insert_one(dict(i))

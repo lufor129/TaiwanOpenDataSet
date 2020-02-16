@@ -22,6 +22,8 @@ class TaipeiscrapySpider(scrapy.Spider):
         scrapy_db = client["opendata"]
         self.coll = scrapy_db["taipei"]
         timeFormat = "NewData_{}_{}"
+        update_month = "Update_{}_{}"
+        self.month = update_month.format(time.localtime()[0],time.localtime()[1])
         self.newColl = scrapy_db[timeFormat.format(time.localtime()[0],time.localtime()[1])]
         formdata = {"frontNumber":"", "pageNum": 1,"perPage": 10,"sort": "","postFilter":{}}
         yield scrapy.Request("https://data.taipei/api/dataportal/search-dataset", body=json.dumps(formdata),method='POST',headers={'Content-Type':'application/json'},callback=self.parse)
@@ -66,6 +68,7 @@ class TaipeiscrapySpider(scrapy.Spider):
         #     self.load_j[key] = self.load_j[key] + 2
         # else:
         #     self.load_j[key] = 1
+        i["updateTime"] = self.month
         if(self.coll.find_one({"title":i["title"],"county":i["county"]})==None):
             print("新增一筆")
             self.newColl.insert_one(i)
